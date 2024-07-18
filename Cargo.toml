@@ -1,0 +1,23 @@
+[package]
+name = "near-erc20"
+description = "erc20 protocal on near"
+version = "0.1.0"
+edition = "2021"
+authors = ["Rooct welling1234@gmail.com"]
+
+repository = "https://github.com/rooct/near-erc20.git"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+near-sdk = { version = "5.1.0", features = ["legacy"] }
+
+
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true
